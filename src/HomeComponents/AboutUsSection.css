@@ -1,0 +1,262 @@
+/* --- Variables for easy color changes --- */
+/* --- Variables for easy color changes --- */
+:root {
+  --primary-green: #38b438; /* A vibrant green */
+  --light-green-bg: #e6f7e6;
+  --dark-text: #333333;
+  --medium-text: #555555;
+  --light-gray-border: #e0e0e0;
+  --white: #ffffff;
+}
+
+.about-us-section {
+  display: flex;
+  min-height: 100vh;
+  font-family: 'Arial', sans-serif;
+  color: var(--dark-text);
+  overflow: hidden;
+}
+
+/* --- Left Section (Image Background) --- */
+.about-us-left {
+  flex: 1.2;
+  position: relative; /* KEY: This is the reference point for the experience-box */
+  overflow: hidden;
+}
+
+.about-us-image-container {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(56, 180, 56, 0.4);
+  mix-blend-mode: multiply;
+}
+
+/* * --- UPDATED EXPERIENCE BOX STYLING ---
+ * This ensures the box sits in the bottom-left and the text is vertical
+ */
+.experience-box {
+  position: absolute;
+  
+  /* KEY: Position in the bottom-left corner of the .about-us-image-container */
+  bottom: 0;
+  left: 0; 
+  
+  background-color: var(--primary-green);
+  color: var(--white);
+  padding: 20px 0; /* Padding for vertical space, not horizontal */
+  
+  /* Make the box narrow and tall like a column */
+  width: 90px; 
+  height: 200px; 
+  
+  /* Flex settings to stack and align content vertically/horizontally */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  text-align: center;
+  
+  /* No rotation needed for this layout */
+  transform: none; 
+  
+  /* Basic styling */
+  border-top-right-radius: 5px; /* Optional: adds a slight corner */
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  white-space: normal; /* Allow text wrapping now */
+}
+
+.experience-years {
+  font-size: 2.8rem; /* Make the number prominent */
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+
+.experience-text {
+  font-size: 0.8rem;
+  line-height: 1.2;
+  font-weight: 500;
+  text-transform: uppercase;
+  /* KEY: Force the text to read vertically if desired, though stacking is simpler */
+  /* If you want the text rotated like in the original image: */
+  /* transform: rotate(-90deg); */
+  /* transform-origin: center; */
+  /* width: 150px; /* Adjust width if rotating */
+  /* margin-top: 30px; */
+}
+
+/* * --- Rest of the CSS remains mostly the same, but include the media query update --- 
+ */
+
+/* --- Right Section (Content) --- */
+.about-us-right {
+  flex: 2;
+  background-color: var(--white);
+  padding: 60px 80px;
+  display: flex;
+  align-items: center;
+}
+
+.right-content-wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.subtitle {
+  color: var(--primary-green);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--dark-text);
+}
+
+.highlight-green {
+  color: var(--primary-green);
+}
+
+.description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--medium-text);
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+.call-to-action {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 25px;
+}
+
+/* --- Service Cards Grid --- */
+.service-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.service-card {
+  background-color: var(--light-green-bg);
+  border: 1px solid var(--light-gray-border);
+  border-radius: 8px;
+  padding: 25px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.service-icon-wrapper {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-green);
+  border-radius: 8px;
+}
+
+.service-icon {
+  fill: var(--white);
+  width: 60%;
+  height: 60%;
+}
+
+.service-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark-text);
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--medium-text);
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 1024px) {
+  .about-us-section {
+    flex-direction: column;
+  }
+
+  .about-us-left,
+  .about-us-right {
+    flex: 1;
+  }
+
+  .about-us-left {
+      min-height: 400px;
+  }
+
+  .about-us-right {
+    padding: 40px 30px;
+  }
+  
+  /* KEY: Reset position for mobile responsiveness */
+  .experience-box {
+    left: 50%;
+    bottom: 0;
+    width: 250px;
+    height: auto;
+    padding: 15px 20px;
+    flex-direction: row;
+    gap: 10px;
+    transform: translateX(-50%) translateY(50%); /* Push half out of the bottom */
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 0;
+  }
+
+  .experience-years {
+    font-size: 2rem;
+    margin-bottom: 0;
+  }
+  
+  .experience-text {
+      /* Remove any vertical text tricks on mobile */
+      transform: none; 
+      width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-us-right {
+    padding: 30px 20px;
+  }
+  .title {
+    font-size: 2rem;
+  }
+  .service-cards-container {
+    grid-template-columns: 1fr;
+  }
+}
