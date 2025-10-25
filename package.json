@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint ."
   },
   "dependencies": {
     "@splinetool/react-spline": "^4.1.0",
@@ -17,10 +17,10 @@
     "styled-components": "^6.1.19"
   },
   "devDependencies": {
-    "@eslint/js": "^9.36.0",
     "@types/react": "^19.1.16",
     "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.4",
+    "@eslint/js": "^9.36.0",
     "babel-plugin-react-compiler": "^19.1.0-rc.3",
     "eslint": "^9.36.0",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -30,5 +30,8 @@
   },
   "overrides": {
     "vite": "npm:rolldown-vite@7.1.14"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }
