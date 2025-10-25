@@ -1,23 +1,22 @@
 import React from 'react'
 import HeroSection from './HomeComponents/HeroSection'
 import AboutSection from './HomeComponents/AboutSection'
-import CounterItem from './HomeComponents/CounterItem'
-// Corrected the typo: 'BuisnessServiceSection' should likely be 'BusinessServicesSection'
-import ServicesSection from './HomeComponents/ServicesSection'
+
 import ContactSection from './HomeComponents/ContactSection'
 import Footer from './HomeComponents/Footer'
 import TestimonialCarousel from './HomeComponents/TestimonialCarousel'
+import SplineScene from './SplineScene'
+import RecentWorksSection from './HomeComponents/RecentWorkSection'
+import BusinessSection from './HomeComponents/BuisnessSection'
 
-import AboutUsSection from './HomeComponents/AboutUsSection'
 const Home = () => {
   return (
     <div>
       <HeroSection/>
       <AboutSection/>
-      <CounterItem/>
-      <ServicesSection/>
-   
-      <AboutUsSection/>
+      
+   <BusinessSection/>
+      <RecentWorksSection/>
    <TestimonialCarousel/>
       <ContactSection/>
       <Footer/>
